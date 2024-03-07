@@ -38,7 +38,7 @@ def process_csv(input_file, output_file):
         if row['resend_status'] in ['success', 'fail']:
             continue
 
-        if row.get('label_class_human') == HUMAN_LABEL:
+        if row.get('classification_human') == HUMAN_LABEL:
             # print(f"Considered: {row['resend_status']}, {row['resend_fail_reason']}, Message: {row['message'][:10]}") 
             # continue
             response = resend_message(row['id'])
